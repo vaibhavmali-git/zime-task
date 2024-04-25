@@ -25,21 +25,21 @@ td.ant-table-cell {
 /* Media query for smaller screens (under 600px wide) */
 @media (max-width: 600px) {
   .table {
-    margin: 1rem; /* Reduced margin */
-    padding: 0.2rem; /* Reduced padding */
+    margin: 1rem;
+    padding: 0.2rem;
   }
 
   .ant-table {
-    overflow-x: auto; /* Enable horizontal scrolling */
-    font-size: 0.85rem; /* Smaller font for table content */
+    overflow-x: auto;
+    font-size: 0.85rem;
   }
 
   .ant-table-thead > tr > th {
-    padding: 4px; /* Reduce padding for table headers */
+    padding: 4px;
   }
 
   .ant-table-tbody > tr > td {
-    padding: 4px; /* Reduce padding for table cells */
+    padding: 4px;
   }
 
   *,

@@ -8,6 +8,7 @@ import "./Home.css";
 
 const useQuery = () => new URLSearchParams(useLocation().search);
 
+// Utility function for debouncing (delay between rapid function calls)
 const debounce = (fn, delay) => {
   let timeoutId;
   return (...args) => {
@@ -39,22 +40,21 @@ const Home = () => {
   });
 
   const [selectedTags, setSelectedTags] = useState(initialSelectedTags);
-  const [tags, setTags] = useState([]); // Store unique tags for filtering
+  const [tags, setTags] = useState([]);
   const [searchText, setSearchText] = useState(initialSearchText);
 
+  // Fetch data from the external source (dummy JSON API)
   const fetchData = async () => {
     setLoading(true);
+
     try {
       const response = await axios.get("https://dummyjson.com/posts?limit=100");
       const posts = response.data.posts;
-
       const uniqueTags = Array.from(
         new Set(posts.flatMap((post) => post.tags))
       );
       setTags(uniqueTags);
-
       setAllData(posts);
-
       applyFilters(
         posts,
         pagination.current,
@@ -70,6 +70,7 @@ const Home = () => {
     }
   };
 
+  // Apply filters based on tags and search text, and paginate the data
   const applyFilters = (allData, currentPage, pageSize, tags, search) => {
     let filteredData = allData;
 
@@ -89,12 +90,12 @@ const Home = () => {
 
     const start = (currentPage - 1) * pageSize;
     const end = currentPage * pageSize;
-    setData(filteredData.slice(start, end)); // Paginate the filtered data
+    setData(filteredData.slice(start, end));
   };
 
   useEffect(() => {
     fetchData();
-  }, []); // Fetch data on component mount
+  }, []);
 
   // When state changes, update the URL and apply filters
   useEffect(() => {
@@ -129,6 +130,7 @@ const Home = () => {
     setSearchText(newSearchText);
   };
 
+  // Table columns definition
   const columns = [
     {
       title: "ID",
@@ -161,6 +163,7 @@ const Home = () => {
     },
   ];
 
+  // Style for loading spinner
   const loadingStyle = {
     display: "flex",
     justifyContent: "center",
