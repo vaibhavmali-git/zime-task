@@ -1,0 +1,71 @@
+.table {
+  margin: 2rem 3rem;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  padding: 0.3rem;
+}
+
+.select {
+  width: 10vw;
+}
+
+.ant-pagination {
+  padding: 1rem;
+}
+
+td.ant-table-cell {
+  font-size: 12.5px;
+  color: rgb(120, 120, 120);
+}
+
+.ant-pagination {
+  font-size: 12px;
+}
+/* Media query for smaller screens (under 600px wide) */
+@media (max-width: 600px) {
+  .table {
+    margin: 1rem; /* Reduced margin */
+    padding: 0.2rem; /* Reduced padding */
+  }
+
+  .ant-table {
+    overflow-x: auto; /* Enable horizontal scrolling */
+    font-size: 0.85rem; /* Smaller font for table content */
+  }
+
+  .ant-table-thead > tr > th {
+    padding: 4px; /* Reduce padding for table headers */
+  }
+
+  .ant-table-tbody > tr > td {
+    padding: 4px; /* Reduce padding for table cells */
+  }
+
+  *,
+  .ant-input,
+  .ant-tag {
+    font-size: 0.8rem;
+  }
+
+  td.ant-table-cell {
+    font-size: 10px;
+  }
+
+  .ant-input {
+    height: 32px;
+  }
+
+  .nav-wrapper {
+    margin: 10px 15px !important;
+    width: 100%;
+  }
+
+  .select {
+    width: 22vw;
+  }
+}
+
+.ant-select-selection-item {
+  font-size: 12px;
+}
