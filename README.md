@@ -1,6 +1,6 @@
 ## Setup
 
-Follow these steps to set up and run the todo application:
+Follow these steps to set up and run the app
 
 1. Clone the Repository:
 
